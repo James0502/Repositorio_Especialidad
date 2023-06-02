@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listar Cotizacion</title>
+</head>
+<body>
+    <h1>Listar Cotizacion</h1>
+    <ul>
+        {% for cotizacion in cotizaciones %}
+        <li>
+            <a href="{% url 'ver_cotizacion' orden_id=orden.id %}">Orden de Cotizacion {{ cotizacion.id }}</a> - Cliente: {{ cotizacion.cliente }}
+        </li>
+        {% empty %}
+        <li>No hay cotizacion.</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'crear_cotizacion' %}">Crear Cotizacion</a>
+</body>
+</html>
